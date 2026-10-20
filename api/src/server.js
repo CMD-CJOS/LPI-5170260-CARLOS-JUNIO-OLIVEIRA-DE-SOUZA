@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const vagasRoutes = require('./routes/vagas.routes');
+const { timeStamp } = require('node:console');
+require('../database/db');
 
+const vagasRoutes = require('./routes/vagas.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

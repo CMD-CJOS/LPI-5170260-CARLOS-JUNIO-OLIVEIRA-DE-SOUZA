@@ -5,14 +5,14 @@ const db = new Database(path.join(__dirname,'../../devjobs.db'));
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS empresas (
-    id INTEGER PRIMARI KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL,
     senha_hash TEXT NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS vagas (
-        id INTEGER PRIMARI KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         titulo TEXT NOT NULL,
         empresa_id INTEGER NOT NULL,
         tipo TEXT CHECK(tipo in('remoto','presencial','hibrido')) NOT NULL,
@@ -26,4 +26,5 @@ db.exec(`
         FOREIGN KEY (empresa_id) REFERENCES empresas(id)
     );
     `
+    
 )
