@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs'); // npm install bcryptjs
 
 const senha = bcrypt.hashSync('123456', 10);
 
+
 db.prepare(`
   INSERT OR IGNORE INTO empresas (id, nome, email, senha_hash)
   VALUES (1, 'TechNova Ltda', 'contato@technova.com', ?)

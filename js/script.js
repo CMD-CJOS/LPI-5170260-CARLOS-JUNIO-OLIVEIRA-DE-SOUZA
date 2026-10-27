@@ -1,4 +1,5 @@
 const vagas = [
+    
     {
         id: 1,
         titulo: 'Desenvolvedor(a) Frontend React',
